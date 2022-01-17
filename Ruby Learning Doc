@@ -1,0 +1,48 @@
+https://guides.rubyonrails.org/getting_started.html#creating-a-new-rails-project
+
+
+Stylish Ruby
+The Ruby language has specific stylistic conventions that make reading and writing Ruby code easier for everyone. These are things you should adopt as quickly as possible, otherwise your code will stand out like a sore thumb.
+
+
+
+
+Basic Data Structures
+Two very common data structures that you will use as a Ruby programmer are arrays and hashes.
+
+Arrays
+  An array is used to organize information into an ordered list. The list can be made up of strings, integers, floats, booleans, or any other data type. In Ruby, an array literal is denoted by square brackets [ ]. Inside the brackets you can create a list of elements separated by commas. Let's make one in irb.
+
+  irb :001 > [1, 2, 3, 4, 5]
+  => [1, 2, 3, 4, 5]
+
+Hashes
+  A hash, sometimes referred to as a dictionary, is a set of key-value pairs. Hash literals are represented with curly braces { }. A key-value pair is an association where a key is assigned a specific value. A hash consists of a key, usually represented by a symbol, that points to a value (denoted using a =>) of any type of data. Let's make some hashes to get the feel of it. Type along!
+
+  irb :001 > {:dog => 'barks'}
+  => {:dog => 'barks'}
+
+Expressions and Return
+ => Ruby expressions always return a value, even if that value is nil or an error
+ => Ruby methods ALWAYS return the evaluated result of the last line of the expression unless an explicit return comes before it
+ => If you wanted to explicitly return a value you can use the return keyword
+
+
+Getting Data from a User
+ -> name = gets
+     irb :001 > name = gets
+     Bob
+     => "Bob\n"
+
+ -> name = gets.chomp
+    We'll use chomp chained to gets to get rid of that - you can put .chomp after any string to remove the carriage return characters at the end.
+    > 'Bob'
+
+Variable Scope
+  => method:
+        name = 'Somebody Else'
+        def print_full_name(first_name, last_name)
+        name = first_name + ' ' + last_name
+        puts name
+        end
+  in the above code, we can't use or change the name variable from line 1 from inside the print_full_name method. We can, however, create and use a different name variable that is locally scoped to the method. That is why lines 3 and 4 work without changing the value of name from line 1.
